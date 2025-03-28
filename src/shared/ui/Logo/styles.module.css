@@ -1,0 +1,8 @@
+.logo {
+    font-family: "Bayon", sans-serif;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: var(--secondary-color);
+}

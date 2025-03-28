@@ -1,0 +1,21 @@
+.categories {
+    display: flex;
+    gap: 50px;
+}
+
+.item, .active {
+    padding: 8px 30px;
+    border: none;
+    border-radius: 60px;
+}
+
+.item {
+    color: var(--main-dark-color);
+    background: transparent;
+    transition: all 0.2s linear;
+}
+
+.item:hover, .active {
+    color: white;
+    background: var(--main-dark-color);
+}

@@ -1,0 +1,9 @@
+.portal {
+    position: absolute;
+    top: calc(100% + 4px);
+    width: 400px;
+    padding: 16px 0;
+    border-radius: 10px;
+    background-color: var(--main-light-color);
+    z-index: 1;
+}

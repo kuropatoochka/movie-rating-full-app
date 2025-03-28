@@ -1,0 +1,17 @@
+.footer {
+    width: 100%;
+    padding: 67px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--main-dark-color);
+}
+
+.footer__content_links {
+    display: flex;
+    gap: 40px;
+}
+
+.footer__content_link {
+    color: var(--main-light-color);
+}

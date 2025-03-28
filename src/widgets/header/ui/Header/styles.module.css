@@ -1,0 +1,10 @@
+.header {
+    position: relative;
+    width: 100%;
+    padding: 10px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--main-dark-color);
+}
+

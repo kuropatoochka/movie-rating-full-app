@@ -1,0 +1,60 @@
+.card {
+    position: relative;
+    margin-bottom: 8px;
+    width: 100%;
+    max-width: 315px;
+    min-width: 215px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card__image {
+    height: 315px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card__info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    gap: 4px;
+}
+
+.card__title {
+    color: var(--main-dark-color);
+}
+
+.card__year {
+    color: var(--subtext-color);
+}
+
+.card__rating {
+    color: var(--rating-color);
+    grid-row: span 2;
+    align-self: flex-end;
+}
+
+.search__card {
+    max-width: 100%;
+    min-height: 36px;
+    padding: 10px 16px;
+    flex-direction: row;
+}
+
+.search__card .card__image {
+    width: 40px;
+    height: 100%;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+.search__card .card__title {
+    font-size: 15px;
+}
+
+.search__card .card__year, .search__card .card__rating {
+    font-size: 13px;
+}
