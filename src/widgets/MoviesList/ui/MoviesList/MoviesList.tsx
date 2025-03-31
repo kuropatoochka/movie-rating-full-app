@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 import { MoviesCardType, MoviesListProps } from "@/entities/movies/model/types.ts";
 import { MovieCard } from "@/entities/movies";
-import withSkeleton from "@/shared/lib/utils/hocs/withSkeleton.tsx";
+import withSkeleton, { Props as SkeletonProps } from "@/shared/lib/utils/hocs/withSkeleton.tsx";
 import { Button } from "@/shared/ui";
 import { FavoritesButton } from "@/features/movies/toggle-favorites";
 import { RootState, useAppSelector } from "@/app/appStore.tsx";
@@ -42,6 +42,6 @@ const MoviesList = ( { movies, type = 'item', buttonType, buttonStyleType }: Mov
   );
 };
 
-const MoviesListWithSkeleton = withSkeleton<MoviesListProps>(MoviesList, 20);
+const MoviesListWithSkeleton = withSkeleton<MoviesListProps, SkeletonProps>(MoviesList, 20);
 
 export default MoviesListWithSkeleton;

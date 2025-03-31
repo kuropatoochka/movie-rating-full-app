@@ -2,7 +2,7 @@ import { DirectionType, SkeletonType } from "@/shared/interface/types.ts";
 import React from "react";
 import { Skeleton } from "@/shared/ui";
 
-interface Props {
+export interface Props {
   isLoading: boolean;
   direction?: DirectionType;
   skeletonType?: SkeletonType;
