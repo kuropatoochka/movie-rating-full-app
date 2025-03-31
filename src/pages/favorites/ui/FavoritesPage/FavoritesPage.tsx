@@ -25,6 +25,7 @@ const FavoritesPage = () => {
         buttonType='icon'
         buttonStyleType='favorite'
         type='item'
+        isLoading={false}
       />
     </main>
   );

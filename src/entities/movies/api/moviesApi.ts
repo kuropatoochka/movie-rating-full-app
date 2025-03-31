@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { ParamsType } from "@/shared/interface/types.ts";
 import { IMovies, ISearchMovies, MoviesApiResponse, SearchMoviesApiResponse } from "@/entities/movies";
-import { MoviesCardType } from "@/entities/movies/model/types.ts";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -31,7 +30,7 @@ export const moviesApi = createApi({
           },
         }
       },
-      transformResponse: ( response: MoviesCardType[] ) => {
+      transformResponse: ( response: MoviesApiResponse ) => {
         return {
           ...response,
           items: response.items.map(( movie: IMovies ) => {
@@ -61,7 +60,7 @@ export const moviesApi = createApi({
           }
         }
       },
-      transformResponse: ( response: MoviesCardType ) => {
+      transformResponse: ( response: SearchMoviesApiResponse ) => {
         return {
           ...response,
           films: response.films.map(( movie: ISearchMovies ) => {
