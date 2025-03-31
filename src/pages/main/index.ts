@@ -1,3 +1,3 @@
-import MainPage from './ui/MainPage.tsx'
+import MainPage from './ui/MainPage/MainPage.tsx'
 
 export { MainPage }

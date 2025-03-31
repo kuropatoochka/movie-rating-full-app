@@ -31,7 +31,8 @@
   },
   "include": [
     "src",
-    "shared/interfaces/vite-env.d.ts"
+    "shared/interfaces/vite-env.d.ts",
+    "shared/interfaces/custom-svg.d.ts"
   ],
   "references": [
     {

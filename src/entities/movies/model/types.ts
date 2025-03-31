@@ -1,5 +1,9 @@
 import React from "react";
 
+type StringArray = {
+  name: string;
+};
+
 export interface IMovies {
   kinopoiskId: number;
   posterUrl: string;
@@ -7,7 +11,9 @@ export interface IMovies {
   nameEn: string;
   nameRu: string;
   description: string;
-  ratingKinopoisk: number;
+  countries?: StringArray[],
+  genres?: StringArray[],
+  ratingKinopoisk: number | null;
   year: number;
   type: string;
 }
@@ -25,7 +31,9 @@ export interface ISearchMovies {
   type: string;
   year: number;
   description: string;
-  rating: string;
+  countries?: StringArray[],
+  genres?: StringArray[],
+  rating: string | null;
   posterUrl: string;
 }
 
@@ -36,21 +44,26 @@ export interface SearchMoviesApiResponse {
 }
 
 export type MoviesListProps = {
-  movies: MoviesCardType[];
-  type: 'search' | 'item';
-  variant: 'icon' | 'text';
+  movies: MoviesCardType[],
+  type: 'search' | 'item' | 'full-item',
+  buttonType: 'icon' | 'text',
+  direction?: "row" | "column",
+  buttonStyleType?: 'favorite' | 'watch' | 'search',
+  skeletonType: 'search' | 'item'
 }
 
 export type MoviesCardType = {
-  id: number,
+  id?: number,
   name: string,
   movieType?: string,
   year?: number,
   description?: string,
-  rating?: string,
+  countries?: StringArray[],
+  genres?: StringArray[],
+  rating?: string | number | null,
   poster?: string,
-  type?: 'search' | 'item',
-  isFavorite: boolean,
+  type?: 'search' | 'item' | 'full-item',
+  isFavorite?: boolean,
   buttonSlot?: React.ReactNode,
 }
 

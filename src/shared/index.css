@@ -6,6 +6,21 @@
     --secondary-color: rgba(255, 61, 129, 1);
     --subtext-color: rgba(21, 21, 21, 0.28);
     --rating-color: rgba(255, 210, 51, 1);
+    --scrollbar-track-color: rgba(152, 152, 152, 0.13)
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: var(--subtext-color);
 }
 
 * {
@@ -21,11 +36,15 @@ body {
     min-height: 100vh;
 }
 
+.container {
+    min-height: calc(100vh - 264px);
+}
+
 a {
     text-decoration: none;
 }
 
-input, button {
+input, button, table {
     outline: none;
     border: none;
     cursor: pointer;
@@ -37,7 +56,7 @@ input, button {
 h1 {
     font-size: 30px;
     line-height: 100%;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 h3 {

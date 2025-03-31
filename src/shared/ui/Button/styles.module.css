@@ -1,6 +1,6 @@
 .button {
-    height: 40px;
-    width: 190px;
+    width: max-content;
+    padding: 8px 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,8 +9,39 @@
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
     font-weight: 500;
+    text-wrap: none;
+    transition: all 0.3s ease-out;
+}
+
+.defaultButton {
+    color: var(--main-dark-color);
+    background-color: transparent;
+}
+
+.defaultButton:hover, .searchButton:hover, .active {
+    color: white;
+    background: var(--main-dark-color);
+}
+
+.favoriteButton {
     color: var(--secondary-color);
     background-color: transparent;
     border: 2px solid var(--secondary-color);
-    transition: all 0.3s ease-out;
+}
+
+.watchButton {
+    color: var(--main-light-color);
+    background-color: var(--secondary-color);
+}
+
+.searchButton {
+    background-color: var(--scrollbar-track-color);
+    color: var(--subtext-color);
+}
+
+.buttonImage {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    background: transparent;
 }

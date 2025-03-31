@@ -1,29 +1,25 @@
 .card {
     position: relative;
-    margin-bottom: 8px;
     width: 100%;
-    max-width: 315px;
-    min-width: 215px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
 }
 
 .card__image {
-    height: 315px;
     object-fit: cover;
     border-radius: 10px;
 }
 
 .card__info {
+    position: relative;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr auto;
+    display: flex;
+    flex-direction: column;
     gap: 4px;
 }
 
-.card__title {
+.card__title, .card__description {
     color: var(--main-dark-color);
 }
 
@@ -33,28 +29,87 @@
 
 .card__rating {
     color: var(--rating-color);
-    grid-row: span 2;
-    align-self: flex-end;
+}
+
+.card__extra_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.search__card .buttons, .mini__card .buttons, .full__card .card__rating {
+    position: absolute;
+    right: 0;
+}
+
+.mini__card .buttons {
+    top: -315px;
+    right: 10px;
 }
 
 .search__card {
-    max-width: 100%;
-    min-height: 36px;
     padding: 10px 16px;
-    flex-direction: row;
 }
 
 .search__card .card__image {
     width: 40px;
     height: 100%;
-    margin-bottom: 0;
     border-radius: 5px;
 }
 
-.search__card .card__title {
-    font-size: 15px;
+.search__card .card__info {
+    justify-content: space-between;
 }
 
 .search__card .card__year, .search__card .card__rating {
     font-size: 13px;
+}
+
+.mini__card {
+    max-width: 315px;
+    min-width: 215px;
+    flex-direction: column;
+}
+
+.mini__card .card__image {
+    height: 315px;
+}
+
+.full__card {
+    padding-right: 20px;
+    gap: 70px;
+}
+
+.full__card .card__image {
+    max-height: 373px;
+    height: 100%;
+    max-width: 282px;
+    width: 100%;
+}
+
+.full__card .card__info {
+    gap: 20px;
+}
+
+.full__card .card__title {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: var(--subtext-color);
+}
+
+.table__row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 50px;
 }

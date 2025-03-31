@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { ParamsType } from "@/shared/interface";
+import { ParamsType } from "@/shared/interface/types.ts";
 import { IMovies, ISearchMovies, MoviesApiResponse, SearchMoviesApiResponse } from "@/entities/movies";
 import { MoviesCardType } from "@/entities/movies/model/types.ts";
 
@@ -43,12 +43,14 @@ export const moviesApi = createApi({
               movieType: movie.type,
               year: movie.year,
               description: movie.description,
+              countries: movie.countries,
+              genres: movie.genres,
             };
           }),
         };
       }
     }),
-    getMoviesByKeywords: builder.query<SearchMoviesApiResponse>({
+    getMoviesByKeywords: builder.query<SearchMoviesApiResponse, ParamsType>({
       query: ( params ) => {
         const { keyword = '', page = 1 } = params || {}
         return {
@@ -71,6 +73,8 @@ export const moviesApi = createApi({
               movieType: movie.type,
               year: movie.year,
               description: movie.description,
+              countries: movie.countries,
+              genres: movie.genres,
             };
           }),
         };

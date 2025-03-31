@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
-import { InputType } from "@/shared/types/InputTypes.ts";
+import { InputType } from "@/shared/interface/types.ts";
 
 export const Input: React.FC<InputType> = ( { value, placeholder, onChange } ) => {
   return (

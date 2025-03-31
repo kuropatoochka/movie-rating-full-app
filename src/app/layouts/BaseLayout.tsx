@@ -4,13 +4,13 @@ import Footer from "@/widgets/footer/ui/Footer/Footer.tsx";
 
 function BaseLayout() {
   return (
-    <div>
+    <>
       <Header/>
       <div className="container">
         <Outlet/>
       </div>
       <Footer/>
-    </div>
+    </>
   )
 }
 
