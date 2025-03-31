@@ -44,7 +44,7 @@ export type MoviesCardType = {
   countries?: Country[],
   genres?: Genre[],
   rating?: string | number,
-  poster?: string,
+  poster: string,
   type?: 'search' | 'item' | 'full-item',
   isFavorite?: boolean,
   buttonSlot?: React.ReactNode,
