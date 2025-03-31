@@ -24,6 +24,7 @@ const FavoritesPage = () => {
         movies={favorites}
         buttonType='icon'
         buttonStyleType='favorite'
+        type='item'
       />
     </main>
   );

@@ -31,7 +31,7 @@ export const moviesApi = createApi({
           },
         }
       },
-      transformResponse: ( response: MoviesCardType ) => {
+      transformResponse: ( response: MoviesCardType[] ) => {
         return {
           ...response,
           items: response.items.map(( movie: IMovies ) => {

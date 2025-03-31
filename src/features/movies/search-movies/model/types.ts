@@ -1,5 +1,5 @@
 import { MoviesCardType } from "@/entities/movies/model/types.ts";
-import { JSX } from "react";
+import React from "react";
 
 export type SearchMoviesInputProps = {
   keywords: string,
@@ -11,6 +11,6 @@ export type SearchModalProps = {
   type: 'search' | 'item',
   isVisible: boolean,
   setSearchResultsVisible: () => void,
-  buttonSlot: JSX.Element,
+  buttonSlot: React.ReactNode,
   isLoading: boolean,
 }

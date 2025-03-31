@@ -1,7 +1,7 @@
 import { Button } from "@/shared/ui";
 import { useNavigate } from "react-router-dom";
 
-const SearchMoviesButton = ( { keyword } ) => {
+const SearchMoviesButton = ( { keyword }: { keyword: string } ) => {
   const navigate = useNavigate()
   const handleClick = () => {
     navigate(`/search?keyword=${keyword}`)

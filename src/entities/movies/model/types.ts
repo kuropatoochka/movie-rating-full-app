@@ -53,7 +53,8 @@ export type MoviesListProps = {
   buttonType: 'icon' | 'text',
   direction?: "row" | "column",
   buttonStyleType?: 'favorite' | 'watch' | 'search',
-  skeletonType: 'search' | 'item'
+  skeletonType: 'search' | 'item',
+  isLoading: boolean
 }
 
 export type MoviesCardType = {

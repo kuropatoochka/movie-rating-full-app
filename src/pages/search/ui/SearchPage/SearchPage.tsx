@@ -22,6 +22,7 @@ const SearchPage = () => {
           type='full-item'
           buttonType='text'
           buttonStyleType='favorite'
+          skeletonType='search'
         />
         : <p>Movies not found</p>}
     </main>
