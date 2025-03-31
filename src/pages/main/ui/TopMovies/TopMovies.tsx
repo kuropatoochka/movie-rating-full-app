@@ -17,7 +17,7 @@ const TopMovies = () => {
         setSelectedCategory={setSelectedCategory}
       />
       <MoviesList
-        movies={data && data}
+        movies={data ?? []}
         isLoading={isLoading}
         type='item'
         buttonType='icon'

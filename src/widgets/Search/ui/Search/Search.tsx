@@ -31,9 +31,9 @@ const Search = () => {
         keywords={keywords}
         setKeywords={setKeywords}
       />
-      {isModal && isSearchResultsVisible && data &&
+      {isModal && isSearchResultsVisible &&
         <SearchModal
-          movies={data}
+          movies={data ?? []}
           isLoading={isLoading}
           isVisible={isSearchResultsVisible}
           setSearchResultsVisible={() => setSearchResultsVisible(false)}
