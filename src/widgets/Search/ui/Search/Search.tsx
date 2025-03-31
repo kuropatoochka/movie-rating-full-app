@@ -11,7 +11,7 @@ const Search = () => {
 
   const [ searchParams, setSearchParams ] = useSearchParams();
 
-  const [ keywords, setKeywords ] = useState('')
+  const [ keywords, setKeywords ] = useState(searchParams.get('keyword') || '')
   const debouncedKeywords = useDebounce(keywords, 1000)
 
   const [ isSearchResultsVisible, setSearchResultsVisible ] = useState(false)

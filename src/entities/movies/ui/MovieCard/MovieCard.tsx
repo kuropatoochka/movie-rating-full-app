@@ -1,8 +1,14 @@
-import React from 'react';
 import styles from './styles.module.css';
 import { MoviesCardType } from '../../model/types.ts';
+import React from "react";
 
-const MovieCard = ( { movie, type = 'item', buttonSlot } ) => {
+export interface MovieCardProps {
+  movie: MoviesCardType,
+  type: string,
+  buttonSlot: React.ReactNode
+}
+
+const MovieCard = ( { movie, type = 'item', buttonSlot }: MovieCardProps ) => {
   const { name, year, poster, description, genres, countries, rating }: MoviesCardType = movie
 
   return (

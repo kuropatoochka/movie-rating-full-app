@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from "react-router-dom";
 import styles from './styles.module.css';
 import { ButtonIcon, Logo } from "@/shared/ui";

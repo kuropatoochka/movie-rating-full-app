@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from "./styles.module.css";
 import { MoviesCardType, MoviesListProps } from "@/entities/movies/model/types.ts";
 import { MovieCard } from "@/entities/movies";
@@ -30,7 +29,7 @@ const MoviesList = ( { movies, type = 'item', buttonType, buttonStyleType }: Mov
                 <FavoritesButton
                   key={movie.id}
                   movie={movie}
-                  isFavorite={movie.isFavorite}
+                  isFavorite={movie.isFavorite as boolean}
                   buttonType={buttonType}
                   buttonStyleType={buttonStyleType}
                 />

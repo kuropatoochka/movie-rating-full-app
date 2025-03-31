@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Header from "@/widgets/header/ui/Header/Header.tsx";
-import Footer from "@/widgets/footer/ui/Footer/Footer.tsx";
+import { Header } from "@/widgets/Header/ui";
+import { Footer } from "@/widgets/Footer/ui";
 
 function BaseLayout() {
   return (

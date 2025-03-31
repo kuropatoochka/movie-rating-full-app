@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './styles.module.css';
 import { MoviesList } from "@/widgets/MoviesList";
 import { CategoryTabs } from "@/features/movies/change-movies-category";

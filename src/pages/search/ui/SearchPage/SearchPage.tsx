@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.css';
 import { MoviesList } from "@/widgets/MoviesList";
 import { useSearchParams } from "react-router-dom";
@@ -16,7 +15,7 @@ const SearchPage = () => {
     <main className={styles.main}>
       <h3>Search results</h3>
 
-      {data?.films.length > 0 ?
+      {data?.films && data.films.length > 0 ?
         <MoviesList
           movies={data && data.films}
           isLoading={isLoading}

@@ -1,5 +1,4 @@
 import styles from './styles.module.css';
-import React from "react";
 import { Button } from "@/shared/ui";
 import { CategoriesProps } from "../../model/types.ts";
 

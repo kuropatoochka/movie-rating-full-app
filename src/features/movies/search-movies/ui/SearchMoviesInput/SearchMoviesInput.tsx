@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./styles.module.css";
 import { ButtonIcon, Input } from "@/shared/ui";
 import { searchIcon } from "@/shared/assets";

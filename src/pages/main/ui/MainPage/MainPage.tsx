@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import styles from './styles.module.css';
 import { useAppDispatch } from "@/app/appStore.tsx";
 import { getFavoriteMovies } from "@/entities/movies/model/moviesSlice.ts";

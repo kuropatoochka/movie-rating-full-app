@@ -5,6 +5,6 @@ export type CategoriesType = {
 
 export type CategoriesProps = {
   categories: CategoriesType[];
-  setSelectedCategory: ( category: string | null ) => void;
+  setSelectedCategory: ( id: string ) => void;
   selectedCategory: string | null;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import styles from './styles.module.css'
 import { RootState, useAppDispatch, useAppSelector } from "@/app/appStore.tsx";
 import { getFavoriteMovies } from "@/entities/movies/model/moviesSlice.ts";
@@ -23,7 +23,7 @@ const FavoritesPage = () => {
       <MoviesList
         movies={favorites}
         buttonType='icon'
-        buttonStyleType='item'
+        buttonStyleType='favorite'
       />
     </main>
   );

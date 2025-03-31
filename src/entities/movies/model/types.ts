@@ -19,7 +19,7 @@ export interface IMovies {
 }
 
 export interface MoviesApiResponse {
-  items: IMovies[];
+  items: IMovies[] | MoviesCardType[];
   total: number;
   totalPages: number;
 }
@@ -40,7 +40,7 @@ export interface ISearchMovies {
 export interface SearchMoviesApiResponse {
   keyword: string;
   pagesCount: number;
-  films: ISearchMovies[]
+  films: ISearchMovies[] | MoviesCardType[];
 }
 
 export type MoviesListProps = {
@@ -53,7 +53,7 @@ export type MoviesListProps = {
 }
 
 export type MoviesCardType = {
-  id?: number,
+  id: number,
   name: string,
   movieType?: string,
   year?: number,

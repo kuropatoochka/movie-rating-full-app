@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAppDispatch } from "@/app/appStore.tsx";
 import { addMovieToFavorites, removeMovieFromFavorites } from "@/entities/movies/model/moviesSlice.ts";
 import { Button, ButtonIcon } from "@/shared/ui";
