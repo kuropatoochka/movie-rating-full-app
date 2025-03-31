@@ -15,9 +15,9 @@ const SearchPage = () => {
     <main className={styles.main}>
       <h3>Search results</h3>
 
-      {data?.films && data.films.length > 0 ?
+      {data && data.length > 0 ?
         <MoviesList
-          movies={data && data.films}
+          movies={data}
           isLoading={isLoading}
           type='full-item'
           buttonType='text'

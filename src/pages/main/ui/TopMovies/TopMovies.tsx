@@ -17,10 +17,12 @@ const TopMovies = () => {
         setSelectedCategory={setSelectedCategory}
       />
       <MoviesList
-        movies={data && data.items}
+        movies={data}
         isLoading={isLoading}
         type='item'
         buttonType='icon'
+        skeletonType='item'
+        direction='row'
       />
     </section>
   );

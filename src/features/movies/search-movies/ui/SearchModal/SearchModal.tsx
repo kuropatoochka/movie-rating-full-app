@@ -21,7 +21,7 @@ const SearchModal = ( {
 
   return ReactDOM.createPortal(
     <div ref={listRef} className={styles.portal}>
-      {movies.length > 0 ? <>
+      {movies && movies.length > 0 ? <>
         <MoviesList
           movies={movies}
           isLoading={isLoading}
