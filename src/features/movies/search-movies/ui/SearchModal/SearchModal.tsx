@@ -33,7 +33,7 @@ const SearchModal = ( {
         {buttonSlot && buttonSlot}
       </> : <p>Movies not found</p>}
     </div>,
-    document.getElementById('search-root')
+    document.getElementById('search-root') as HTMLElement
   );
 };
 

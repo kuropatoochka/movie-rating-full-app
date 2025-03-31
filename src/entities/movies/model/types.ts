@@ -1,7 +1,11 @@
 import React from "react";
 
-type StringArray = {
-  name: string;
+type Genre = {
+  genre: string;
+};
+
+type Country = {
+  country: string;
 };
 
 export interface IMovies {
@@ -11,8 +15,8 @@ export interface IMovies {
   nameEn: string;
   nameRu: string;
   description: string;
-  countries?: StringArray[],
-  genres?: StringArray[],
+  countries?: Country[],
+  genres?: Genre[],
   ratingKinopoisk: number | null;
   year: number;
   type: string;
@@ -31,8 +35,8 @@ export interface ISearchMovies {
   type: string;
   year: number;
   description: string;
-  countries?: StringArray[],
-  genres?: StringArray[],
+  countries?: Country[],
+  genres?: Genre[],
   rating: string | null;
   posterUrl: string;
 }
@@ -58,8 +62,8 @@ export type MoviesCardType = {
   movieType?: string,
   year?: number,
   description?: string,
-  countries?: StringArray[],
-  genres?: StringArray[],
+  countries?: Country[],
+  genres?: Genre[],
   rating?: string | number | null,
   poster?: string,
   type?: 'search' | 'item' | 'full-item',
