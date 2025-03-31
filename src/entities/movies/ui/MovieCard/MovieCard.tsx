@@ -14,7 +14,7 @@ const MovieCard = ( { movie, type = 'item', buttonSlot }: MovieCardProps ) => {
   return (
     <article
       className={`${styles.card} ${type === 'search' && styles.search__card} ${type === 'item' && styles.mini__card} ${type === 'full-item' && styles.full__card}`}>
-      <img className={styles.card__image} src={poster} alt="movie"/>
+      {poster && <img className={styles.card__image} src={poster} alt="movie"/>}
       <div className={styles.card__info}>
         <h3 className={styles.card__title}>{name}</h3>
         {type === 'full-item' ?
