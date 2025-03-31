@@ -17,16 +17,16 @@ export interface IMovies {
   description: string;
   countries?: Country[],
   genres?: Genre[],
-  ratingKinopoisk: number | null;
+  ratingKinopoisk: number;
   year: number;
   type: string;
 }
 
-export interface MoviesApiResponse {
-  items: MoviesCardType[];
-  total: number;
-  totalPages: number;
-}
+// export interface MoviesApiResponse {
+//   items: MoviesCardType[];
+//   total: number;
+//   totalPages: number;
+// }
 
 export interface ISearchMovies {
   filmId: number;
@@ -35,16 +35,32 @@ export interface ISearchMovies {
   type: string;
   year: number;
   description: string;
-  countries?: Country[],
-  genres?: Genre[],
-  rating: string | null;
+  countries: Country[],
+  genres: Genre[],
+  rating: string;
   posterUrl: string;
 }
 
-export interface SearchMoviesApiResponse {
-  keyword: string;
-  pagesCount: number;
-  films: MoviesCardType[];
+// export interface SearchMoviesApiResponse {
+//   keyword: string;
+//   pagesCount: number;
+//   films: MoviesCardType[];
+// }
+
+
+export type MoviesCardType = {
+  id: number,
+  name: string,
+  movieType: string,
+  year: number,
+  description: string,
+  countries: Country[],
+  genres: Genre[],
+  rating: string | number,
+  poster: string,
+  type?: 'search' | 'item' | 'full-item',
+  isFavorite?: boolean,
+  buttonSlot?: React.ReactNode,
 }
 
 export type MoviesListProps = {
@@ -55,21 +71,6 @@ export type MoviesListProps = {
   buttonStyleType?: 'favorite' | 'watch' | 'search',
   skeletonType: 'search' | 'item',
   isLoading: boolean
-}
-
-export type MoviesCardType = {
-  id: number,
-  name: string,
-  movieType?: string,
-  year?: number,
-  description?: string,
-  countries?: Country[],
-  genres?: Genre[],
-  rating?: string | number | null,
-  poster?: string,
-  type?: 'search' | 'item' | 'full-item',
-  isFavorite?: boolean,
-  buttonSlot?: React.ReactNode,
 }
 
 export type MoviesStateType = {
