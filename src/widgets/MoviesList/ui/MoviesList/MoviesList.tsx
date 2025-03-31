@@ -6,7 +6,7 @@ import { Button } from "@/shared/ui";
 import { FavoritesButton } from "@/features/movies/toggle-favorites";
 import { RootState, useAppSelector } from "@/app/appStore.tsx";
 
-const MoviesList = ( { movies, type = 'item', buttonType, buttonStyleType }: MoviesListProps | undefined ) => {
+const MoviesList = ( { movies, type = 'item', buttonType, buttonStyleType }: MoviesListProps ) => {
   const favorites = useAppSelector(( state: RootState ) => state.movies.favorites);
 
   const moviesWithFavorites: MoviesCardType[] = movies.map(movie => ({
