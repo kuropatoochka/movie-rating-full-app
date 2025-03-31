@@ -4,43 +4,43 @@ type StringArray = {
   name: string;
 };
 
-export interface IMovies {
-  kinopoiskId: number;
-  posterUrl: string;
-  nameOriginal: string;
-  nameEn: string;
-  nameRu: string;
-  description: string;
-  countries?: StringArray[],
-  genres?: StringArray[],
-  ratingKinopoisk: number | null;
-  year: number;
-  type: string;
-}
+// export interface IMovies {
+//   kinopoiskId: number;
+//   posterUrl: string;
+//   nameOriginal: string;
+//   nameEn: string;
+//   nameRu: string;
+//   description: string;
+//   countries?: StringArray[],
+//   genres?: StringArray[],
+//   ratingKinopoisk: number | null;
+//   year: number;
+//   type: string;
+// }
 
 export interface MoviesApiResponse {
-  items: IMovies[] | MoviesCardType[];
+  items: MoviesCardType[];
   total: number;
   totalPages: number;
 }
 
-export interface ISearchMovies {
-  filmId: number;
-  nameEn: string;
-  nameRu: string;
-  type: string;
-  year: number;
-  description: string;
-  countries?: StringArray[],
-  genres?: StringArray[],
-  rating: string | null;
-  posterUrl: string;
-}
+// export interface ISearchMovies {
+//   filmId: number;
+//   nameEn: string;
+//   nameRu: string;
+//   type: string;
+//   year: number;
+//   description: string;
+//   countries?: StringArray[],
+//   genres?: StringArray[],
+//   rating: string | null;
+//   posterUrl: string;
+// }
 
 export interface SearchMoviesApiResponse {
   keyword: string;
   pagesCount: number;
-  films: ISearchMovies[] | MoviesCardType[];
+  films: MoviesCardType[];
 }
 
 export type MoviesListProps = {

@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouteObject } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import BaseLayout from "./layouts/BaseLayout.tsx";
 import { MainPage } from "@/pages/main";
 import { FavoritesPage } from "@/pages/favorites";
 import { SearchPage } from "@/pages/search";
 
-export const appRouter: RouteObject[] = createBrowserRouter([
+export const appRouter = createBrowserRouter([
   {
     element: <BaseLayout/>,
     errorElement: <div>Error</div>,

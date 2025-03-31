@@ -12,7 +12,7 @@ const MovieCard = ( { movie, type = 'item', buttonSlot }: MovieCardProps ) => {
   const { name, year, poster, description, genres, countries, rating }: MoviesCardType = movie
 
   return (
-    <li
+    <article
       className={`${styles.card} ${type === 'search' && styles.search__card} ${type === 'item' && styles.mini__card} ${type === 'full-item' && styles.full__card}`}>
       <img className={styles.card__image} src={poster} alt="movie"/>
       <div className={styles.card__info}>
@@ -43,7 +43,7 @@ const MovieCard = ( { movie, type = 'item', buttonSlot }: MovieCardProps ) => {
           </div>}
         {buttonSlot && <div className={styles.buttons}>{buttonSlot}</div>}
       </div>
-    </li>
+    </article>
   );
 };
 
