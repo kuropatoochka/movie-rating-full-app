@@ -11,7 +11,7 @@ import { RootState, useAppSelector } from "@/app/appStore.tsx";
 const SearchModal = ( { movies, isVisible, setSearchResultsVisible, buttonSlot }: SearchModalProps ) => {
   const favorites = useAppSelector(( state: RootState ) => state.movies.favorites);
 
-  const listRef = useRef(null)
+  const listRef = useRef<HTMLDivElement | null>(null)
 
   useOutsideClick(listRef, setSearchResultsVisible, isVisible);
 
