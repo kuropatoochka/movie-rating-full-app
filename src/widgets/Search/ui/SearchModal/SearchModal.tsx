@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import ReactDOM from "react-dom";
 import styles from "./styles.module.css";
 import { SearchModalProps } from "../../model/types.ts";
@@ -44,7 +44,7 @@ const SearchModal = ( { movies, isVisible, setSearchResultsVisible, buttonSlot }
         </>
         : <p>Movies not found</p>
       }
-    </div>,
+    </div> as React.ReactNode,
     document.getElementById('search-root')
   );
 };

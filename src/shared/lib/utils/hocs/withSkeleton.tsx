@@ -3,7 +3,7 @@ import React from "react";
 import { Skeleton } from "@/shared";
 
 export interface Props {
-  isLoading: boolean;
+  isLoading?: boolean;
   direction?: DirectionType;
   skeletonType?: SkeletonType;
 }
