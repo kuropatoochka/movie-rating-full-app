@@ -1,4 +1,11 @@
-import React from "react";
+import React, { JSX } from "react";
+import { DirectionType, SkeletonType } from "@/shared/interface/types.ts";
+
+export type Params = Partial<{
+  type: string,
+  page: number,
+  keyword: string
+}>
 
 type Genre = {
   genre: string;
@@ -15,8 +22,8 @@ export interface IMovies {
   nameEn: string;
   nameRu: string;
   description: string;
-  countries?: Country[],
-  genres?: Genre[],
+  countries: Country[],
+  genres: Genre[],
   ratingKinopoisk: number;
   year: number;
   type: string;
@@ -35,29 +42,35 @@ export interface ISearchMovies {
   posterUrl: string;
 }
 
+export type cardType = 'search' | 'item' | 'full-item'
+
 export type MoviesCardType = {
   id: number,
   name: string,
   movieType?: string,
-  year?: number,
+  year: number,
   description?: string,
   countries?: Country[],
   genres?: Genre[],
-  rating?: string | number,
+  rating: string | number,
   poster: string | null,
-  type?: 'search' | 'item' | 'full-item',
   isFavorite?: boolean,
-  buttonSlot?: React.ReactNode,
+}
+
+export type MovieCardProps = {
+  movie: MoviesCardType,
+  cardType: cardType,
+  buttonSlot: React.ReactNode,
 }
 
 export type MoviesListProps = {
   movies: MoviesCardType[],
-  type: 'search' | 'item' | 'full-item',
-  buttonType: 'icon' | 'text',
-  direction?: "row" | "column",
-  buttonStyleType?: 'favorite' | 'watch' | 'search',
-  skeletonType?: 'search' | 'item',
-  isLoading: boolean
+  favorites?: MoviesCardType[],
+  isLoading?: boolean,
+  cardType: cardType,
+  renderMovies: ( movie: MoviesCardType ) => JSX.Element,
+  skeletonType?: SkeletonType,
+  direction?: DirectionType,
 }
 
 export type MoviesStateType = {

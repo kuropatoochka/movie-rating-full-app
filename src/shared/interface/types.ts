@@ -1,15 +1,13 @@
-import React from "react";
-
-export type Params = {
-  type: string,
-  page: number,
-  keyword: string
-}
-
-export type ParamsType = Partial<Params>;
+import React, { JSX } from "react";
 
 export type SkeletonType = "search" | "item";
 export type DirectionType = "row" | "column";
+
+export type SkeletonProps = Partial<{
+  skeletonType: SkeletonType,
+  direction: DirectionType,
+  count: number,
+}>
 
 export type InputType = {
   placeholder: string,
@@ -17,18 +15,20 @@ export type InputType = {
   onChange: ( e: React.ChangeEvent<HTMLInputElement> ) => void,
 }
 
-export type ButtonType = {
+export type ButtonType = 'icon' | 'text'
+export type ButtonStyleType = 'favorite' | 'watch' | 'search'
+
+export type ButtonProps = {
   text: string,
-  type?: 'favorite' | 'watch' | 'search',
-  handleClick?: ( e?: React.MouseEvent ) => void,
+  type?: ButtonStyleType,
+  handleClick: ( e: React.MouseEvent<HTMLButtonElement> ) => void,
   isActive?: boolean,
 }
 
-export type ButtonIconType = {
-  alt: string,
+export type ButtonIconProps = {
+  handleClick: () => void,
   isActive?: boolean,
-  activeIcon?: string,
-  defaultIcon?: string,
-  handleClick?: ( e?: React.MouseEvent | '' ) => void,
+  defaultIcon: JSX.Element,
+  activeIcon?: JSX.Element,
 }
 

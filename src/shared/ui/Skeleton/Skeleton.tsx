@@ -1,13 +1,8 @@
-import { DirectionType, SkeletonType } from "@/shared/interface/types.ts";
+import { SkeletonProps } from "@/shared/interface/types.ts";
 import styles from './styles.module.css';
 
-interface Props {
-  skeletonType?: SkeletonType;
-  count?: number;
-  direction?: DirectionType;
-}
 
-const Skeleton = ( { count = 1, skeletonType = "item", direction = "row" }: Props ) => {
+const Skeleton = ( { count, skeletonType = "item", direction = "row" }: SkeletonProps ) => {
   return (
     <>
       {count > 1 ? (

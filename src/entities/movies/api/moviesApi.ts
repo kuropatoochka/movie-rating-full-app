@@ -1,7 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { ParamsType } from "@/shared/interface/types.ts";
-import { IMovies, ISearchMovies } from "@/entities/movies";
-import { MoviesCardType } from "@/entities/movies/model/types.ts";
+import { IMovies, ISearchMovies, MoviesCardType, Params } from "../model/types.ts";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -17,7 +15,7 @@ export const moviesApi = createApi({
     }
   }),
   endpoints: ( builder ) => ({
-    getTopMovies: builder.query<MoviesCardType[], ParamsType>({
+    getTopMovies: builder.query<MoviesCardType[], Params>({
       query: ( params ) => {
         const { type = 'TOP_POPULAR_MOVIES', page = 1 } = params || {};
         return {
@@ -43,7 +41,7 @@ export const moviesApi = createApi({
       }
     }),
 
-    getMoviesByKeywords: builder.query<MoviesCardType[], ParamsType>({
+    getMoviesByKeywords: builder.query<MoviesCardType[], Params>({
       query: ( params ) => {
         const { keyword = '', page = 1 } = params || {};
         return {

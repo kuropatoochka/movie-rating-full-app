@@ -1,6 +1,6 @@
 import { DirectionType, SkeletonType } from "@/shared/interface/types.ts";
 import React from "react";
-import { Skeleton } from "@/shared/ui";
+import { Skeleton } from "@/shared";
 
 export interface Props {
   isLoading: boolean;
@@ -13,10 +13,11 @@ function withSkeleton<P extends object>( Component: React.ComponentType<P>, coun
     const { isLoading, skeletonType, direction = "row", ...restProps } = props;
 
     if (isLoading) {
-      return <Skeleton skeletonType={skeletonType} count={count} direction={direction}/>;
+      return <Skeleton skeletonType={skeletonType as "search" | "item"} count={count ?? 1}
+                       direction={direction as "row" | "column"}/>;
     }
 
-    return <Component skeletonType={skeletonType} {...(restProps as P)} />;
+    return <Component {...(restProps as P)} />;
   };
 }
 

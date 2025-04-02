@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styles from './styles.module.css'
 import { RootState, useAppDispatch, useAppSelector } from "@/app/appStore.tsx";
+import { FavoritesButton } from "@/features/movies/toggle-favorites";
 import { getFavoriteMovies } from "@/entities/movies/model/moviesSlice.ts";
-import { MoviesList } from "@/widgets/MoviesList";
+import { MovieCard, MoviesList } from "@/entities/movies";
 
 
 const FavoritesPage = () => {
@@ -22,10 +23,22 @@ const FavoritesPage = () => {
       <h3>Favorites movies</h3>
       <MoviesList
         movies={favorites}
-        buttonType='icon'
-        buttonStyleType='favorite'
-        type='item'
+        cardType='item'
         isLoading={false}
+        renderMovies={( movie ) => (
+          <MovieCard
+            key={movie.id}
+            movie={movie}
+            cardType='item'
+            buttonSlot={
+              <FavoritesButton
+                movie={movie}
+                isFavorite={true}
+                buttonType='icon'
+              />
+            }
+          />
+        )}
       />
     </main>
   );

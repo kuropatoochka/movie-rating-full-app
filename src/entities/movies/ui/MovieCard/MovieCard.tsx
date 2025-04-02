@@ -1,23 +1,16 @@
 import styles from './styles.module.css';
-import { MoviesCardType } from '../../model/types.ts';
-import React from "react";
+import { MovieCardProps, MoviesCardType } from '../../model/types.ts';
 
-export interface MovieCardProps {
-  movie: MoviesCardType,
-  type: string,
-  buttonSlot: React.ReactNode
-}
-
-const MovieCard = ( { movie, type = 'item', buttonSlot }: MovieCardProps ) => {
+const MovieCard = ( { movie, cardType = 'item', buttonSlot }: MovieCardProps ) => {
   const { name, year, poster, description, genres, countries, rating }: MoviesCardType = movie
 
   return (
     <article
-      className={`${styles.card} ${type === 'search' && styles.search__card} ${type === 'item' && styles.mini__card} ${type === 'full-item' && styles.full__card}`}>
+      className={`${styles.card} ${cardType === 'search' && styles.search__card} ${cardType === 'item' && styles.mini__card} ${cardType === 'full-item' && styles.full__card}`}>
       {poster && <img className={styles.card__image} src={poster} alt="movie"/>}
       <div className={styles.card__info}>
         <h3 className={styles.card__title}>{name}</h3>
-        {type === 'full-item' ?
+        {cardType === 'full-item' ?
           <>
             <p className={styles.card__description}>{description}</p>
             <div className={styles.table}>

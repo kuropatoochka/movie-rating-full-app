@@ -1,8 +1,8 @@
 import styles from './styles.module.css';
-import { Button } from "@/shared/ui";
+import { Button } from "@/shared";
 import { CategoriesProps } from "../../model/types.ts";
 
-const CategoryTabs = ( { categories, setSelectedCategory, selectedCategory }: CategoriesProps ) => {
+const CategoryTabs = ( { categories, selectedCategory, setSelectedCategory }: CategoriesProps ) => {
   return (
     <ul className={styles.categories}>
       {categories.map(( category ) => {

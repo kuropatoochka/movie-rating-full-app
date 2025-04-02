@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import styles from './styles.module.css';
-import { SearchModal, SearchMoviesButton, SearchMoviesInput } from "@/features/movies/search-movies";
+import { SearchMoviesButton, SearchMoviesInput } from "@/features/movies/search-movies";
 import { useGetMoviesByKeywordsQuery } from "@/entities/movies/api/moviesApi.ts";
 import { useDebounce } from "@/shared/lib/utils/hooks/useDebounce.ts";
+import SearchModal from "../SearchModal/SearchModal.tsx";
 
 const Search = () => {
   const location = useLocation();
@@ -16,7 +17,7 @@ const Search = () => {
 
   const [ isSearchResultsVisible, setSearchResultsVisible ] = useState(false)
 
-  const { data, isLoading } = useGetMoviesByKeywordsQuery(
+  const { data } = useGetMoviesByKeywordsQuery(
     { keyword: debouncedKeywords }
   )
 
@@ -34,11 +35,9 @@ const Search = () => {
       {isModal && isSearchResultsVisible &&
         <SearchModal
           movies={data ?? []}
-          isLoading={isLoading}
           isVisible={isSearchResultsVisible}
           setSearchResultsVisible={() => setSearchResultsVisible(false)}
           buttonSlot={<SearchMoviesButton keyword={debouncedKeywords}/>}
-          type='search'
         />
       }
     </div>

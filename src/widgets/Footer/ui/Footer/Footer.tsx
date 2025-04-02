@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { Logo } from "@/shared/ui";
+import { Logo } from "@/shared";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
@@ -8,6 +8,7 @@ const Footer = () => {
   const menuItems = [
     { id: '1', label: 'Main', path: '/' },
     { id: '2', label: 'Favorites', path: '/favorites' },
+    { id: '3', label: 'Search', path: '/search' },
   ]
 
   const handleMenuClick = ( path: string ) => {

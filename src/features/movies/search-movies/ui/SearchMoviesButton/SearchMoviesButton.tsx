@@ -1,4 +1,4 @@
-import { Button } from "@/shared/ui";
+import { Button } from "@/shared";
 import { useNavigate } from "react-router-dom";
 
 const SearchMoviesButton = ( { keyword }: { keyword: string } ) => {
@@ -8,7 +8,7 @@ const SearchMoviesButton = ( { keyword }: { keyword: string } ) => {
   }
 
   return (
-    <Button text='Watch all' type='search' handleClick={handleClick}/>
+    <Button type='search' text='Watch all' handleClick={handleClick}/>
   );
 };
 

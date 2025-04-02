@@ -39,9 +39,15 @@
     color: var(--subtext-color);
 }
 
-.buttonImage {
-    height: 24px;
+.buttonIcon {
     width: 24px;
+    height: 24px;
+    color: var(--secondary-color);
     cursor: pointer;
     background: transparent;
+}
+
+.buttonIcon svg {
+    width: 100%;
+    height: 100%;
 }

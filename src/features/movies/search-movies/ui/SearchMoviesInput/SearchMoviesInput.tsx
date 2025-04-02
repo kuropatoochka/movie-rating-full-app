@@ -1,7 +1,11 @@
 import styles from "./styles.module.css";
-import { ButtonIcon, Input } from "@/shared/ui";
-import { searchIcon } from "@/shared/assets";
-import { SearchMoviesInputProps } from "../../model/types.ts";
+import { ButtonIcon, Input } from "@/shared";
+import { Magnifier, Xmark } from '@gravity-ui/icons';
+
+type SearchMoviesInputProps = {
+  keywords: string,
+  setKeywords: ( value: string ) => void,
+}
 
 const SearchMoviesInput = ( { keywords, setKeywords }: SearchMoviesInputProps ) => {
   return (
@@ -12,10 +16,9 @@ const SearchMoviesInput = ( { keywords, setKeywords }: SearchMoviesInputProps ) 
         onChange={( e ) => setKeywords(e.target.value)}
       />
       <ButtonIcon
-        alt='search'
         isActive={!!keywords}
-        defaultIcon={searchIcon.searchDefault}
-        activeIcon={searchIcon.searchActive}
+        defaultIcon=<Magnifier/>
+        activeIcon=<Xmark/>
         handleClick={() => setKeywords('')}
       />
     </label>

@@ -1,13 +1,10 @@
-import React from "react";
-import styles from "./styles.module.css";
-import { ButtonIconType } from "@/shared/interface/types.ts";
+import { ButtonIconProps } from "@/shared/interface/types.ts";
+import styles from './styles.module.css';
 
-export const ButtonIcon: React.FC<ButtonIconType> = ( { alt, isActive, handleClick, activeIcon, defaultIcon } ) => {
+export const ButtonIcon = ( { isActive = false, handleClick, activeIcon, defaultIcon }: ButtonIconProps ) => {
   return (
-    <img
-      alt={alt}
-      src={isActive ? activeIcon : defaultIcon}
-      className={styles.buttonImage}
-      onClick={handleClick}/>
+    <button className={styles.buttonIcon} onClick={handleClick}>
+      {isActive ? activeIcon : defaultIcon}
+    </button>
   );
 };

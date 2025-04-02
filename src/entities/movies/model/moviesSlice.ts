@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { MoviesCardType, MoviesStateType } from "@/entities/movies/model/types.ts";
+import { MoviesCardType, MoviesStateType } from "../model/types.ts";
 
 const initialState: MoviesStateType = {
   favorites: []

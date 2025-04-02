@@ -1,5 +1,4 @@
 import MovieCard from "./ui/MovieCard/MovieCard.tsx";
-import { IMovies, ISearchMovies } from "@/entities/movies/model/types.ts";
+import MoviesList from "./ui/MoviesList/MoviesList.tsx";
 
-export { MovieCard }
-export type { IMovies, ISearchMovies }
+export { MovieCard, MoviesList }

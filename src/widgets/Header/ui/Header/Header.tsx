@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import styles from './styles.module.css';
-import { ButtonIcon, Logo } from "@/shared/ui";
-import { favoritesIcons } from "@/shared/assets";
 import { Search } from "@/widgets/Search";
+import { ButtonIcon, Logo } from "@/shared";
+import { BookmarkFill } from "@gravity-ui/icons";
 
 const Header = () => {
   const navigate = useNavigate()
@@ -12,9 +12,7 @@ const Header = () => {
       <Logo/>
       <Search/>
       <ButtonIcon
-        alt='favorites'
-        isActive={true}
-        activeIcon={favoritesIcons.favoritesActive}
+        defaultIcon=<BookmarkFill/>
         handleClick={() => navigate('/favorites')}
       />
     </header>
