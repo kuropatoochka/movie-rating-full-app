@@ -21,7 +21,7 @@ export type ButtonStyleType = 'favorite' | 'watch' | 'search'
 export type ButtonProps = {
   text: string,
   type?: ButtonStyleType,
-  handleClick: ( e: React.MouseEvent<HTMLButtonElement> ) => void,
+  handleClick?: ( e: React.MouseEvent<HTMLButtonElement> ) => void,
   isActive?: boolean,
 }
 

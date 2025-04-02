@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import ReactDOM from "react-dom";
 import styles from "./styles.module.css";
 import { SearchModalProps } from "../../model/types.ts";
@@ -19,29 +19,31 @@ const SearchModal = ( { movies, isVisible, setSearchResultsVisible, buttonSlot }
 
   return ReactDOM.createPortal(
     <div ref={listRef} className={styles.portal}>
-      <>
-        <MoviesList
-          movies={movies ?? []}
-          favorites={favorites}
-          cardType='search'
-          renderMovies={( movie ) => (
-            <MovieCard
-              key={movie.id}
-              movie={movie}
-              cardType='search'
-              buttonSlot={
-                <FavoritesButton
-                  movie={movie}
-                  isFavorite={movie.isFavorite as boolean}
-                  buttonType='icon'
-                />
-              }
-            />
-          )}
-        />
-        {buttonSlot && buttonSlot}
-      </>
-      {/*: <p>Movies not found</p>*/}
+      {movies.length > 0 ?
+        <>
+          <MoviesList
+            movies={movies ?? []}
+            favorites={favorites}
+            cardType='search'
+            renderMovies={( movie ) => (
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+                cardType='search'
+                buttonSlot={
+                  <FavoritesButton
+                    movie={movie}
+                    isFavorite={movie.isFavorite as boolean}
+                    buttonType='icon'
+                  />
+                }
+              />
+            )}
+          />
+          {buttonSlot && buttonSlot}
+        </>
+        : <p>Movies not found</p>
+      }
     </div>,
     document.getElementById('search-root')
   );

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import styles from './styles.module.css'
 import { RootState, useAppDispatch, useAppSelector } from "@/app/appStore.tsx";
 import { FavoritesButton } from "@/features/movies/toggle-favorites";

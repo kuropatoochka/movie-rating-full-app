@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './styles.module.css';
 import { CategoryTabs } from "@/features/movies/change-movies-category";
 import { categories } from "@/features/movies/change-movies-category/constants/constants.ts";

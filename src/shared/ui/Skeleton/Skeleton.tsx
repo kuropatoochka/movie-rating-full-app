@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const Skeleton = ( { count, skeletonType = "item", direction = "row" }: SkeletonProps ) => {
   return (
     <>
-      {count > 1 ? (
+      {count && count > 1 ? (
         <ul className={direction === "column" ? styles.columnList : styles.rowList}>
           {[ ...Array(count) ].map(( _, index ) => (
             <li key={index} className={skeletonType === "search" ? styles.search : styles.item}></li>
