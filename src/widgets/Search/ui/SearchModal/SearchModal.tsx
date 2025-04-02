@@ -45,7 +45,7 @@ const SearchModal = ( { movies, isVisible, setSearchResultsVisible, buttonSlot }
         : <p>Movies not found</p>
       }
     </div> as React.ReactNode,
-    document.getElementById('search-root')
+    document.getElementById('search-root') as HTMLElement
   );
 };
 
