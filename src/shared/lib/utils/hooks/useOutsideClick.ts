@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 
 export const useOutsideClick = (
-  targetRef: React.RefObject<HTMLDivElement | null>,
+  targetRef: React.RefObject<HTMLDivElement>,
   onOutsideClick: () => void,
-  isActive: boolean = true ) => {
-
+  isActive: boolean = true
+) => {
   useEffect(() => {
     if (!isActive) return;
 
