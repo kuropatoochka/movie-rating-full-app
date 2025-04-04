@@ -1,21 +1,15 @@
+import { useEffect } from "react";
 import styles from './styles.module.css';
 import { useSearchParams } from "react-router-dom";
 import { useGetMoviesByKeywordsQuery } from "@/entities/movies/api/moviesApi.ts";
-import { MovieCard, MoviesList } from "@/entities/movies";
-import { FavoritesButton } from "@/features/movies/toggle-favorites";
-import { Button } from "@/shared";
-import { RootState, useAppDispatch, useAppSelector } from "@/app/appStore.tsx";
-import { useEffect } from "react";
+
 import { getFavoriteMovies } from "@/entities/movies/model/moviesSlice.ts";
-import { MoviesCardType } from "@/entities/movies/model/types.ts";
+import { RootState, useAppDispatch, useAppSelector } from "@/shared/store/store.ts";
+import { MoviesList } from "@/widgets/MoviesList";
 
 const SearchPage = () => {
   const [ searchParams ] = useSearchParams();
   const keyword = searchParams.get('keyword') || '';
-
-  const { data } = useGetMoviesByKeywordsQuery(
-    { keyword: keyword },
-  );
 
   const dispatch = useAppDispatch();
 
@@ -28,36 +22,24 @@ const SearchPage = () => {
 
   const favorites = useAppSelector(( state: RootState ) => state.movies.favorites);
 
+  const { data, isLoading } = useGetMoviesByKeywordsQuery(
+    { keyword: keyword },
+    { keepUnusedDataFor: 0 }
+  );
+  console.log(isLoading)
   return (
     <main className={styles.main}>
       <h3>Search results</h3>
-
-      {data && data.length > 0 ?
-        <MoviesList
-          movies={data}
-          favorites={favorites}
-          cardType='full-item'
-          renderMovies={( movie: MoviesCardType ) => (
-            <MovieCard
-              key={movie.id}
-              movie={movie}
-              cardType='full-item'
-              buttonSlot={
-                <>
-                  <Button type='watch' text="Watch"/>
-                  <FavoritesButton
-                    movie={movie}
-                    isFavorite={movie.isFavorite as boolean}
-                    buttonType='text'
-                    buttonStyleType='favorite'
-                  />
-                </>
-
-              }
-            />
-          )}
-        />
-        : <p>Movies not found</p>}
+      <MoviesList
+        movies={data}
+        favorites={favorites}
+        isLoading={isLoading}
+        direction='column'
+        cardType='full-item'
+        buttonType='text'
+        buttonStyleType='favorite'
+      />
+      {!!data && <p>Movies not found</p>}
     </main>
   );
 };

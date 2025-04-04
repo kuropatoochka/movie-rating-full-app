@@ -1,8 +1,8 @@
-import { useAppDispatch } from "@/app/appStore.tsx";
 import { addMovieToFavorites, removeMovieFromFavorites } from "@/entities/movies/model/moviesSlice.ts";
 import { Button, ButtonIcon } from "@/shared";
 import { FavoriteButtonProps } from "../../model/types.ts";
 import { Bookmark, BookmarkFill } from '@gravity-ui/icons';
+import { useAppDispatch } from "@/shared/store/store.ts";
 
 const FavoritesButton = ( { movie, isFavorite, buttonType, buttonStyleType }: FavoriteButtonProps ) => {
   const dispatch = useAppDispatch()

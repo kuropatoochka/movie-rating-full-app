@@ -1,17 +1,19 @@
-import { moviesApi } from "@/entities/movies/api/moviesApi.ts";
 import { configureStore } from "@reduxjs/toolkit";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { rootReducer } from "@/app/appReducer.tsx";
+import { moviesApi } from "@/entities/movies/api/moviesApi.ts";
+import moviesReducer from "@/entities/movies/model/moviesSlice.ts";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    movies: moviesReducer,
+    [moviesApi.reducerPath]: moviesApi.reducer,
+  },
   middleware: ( getDefaultMiddleware ) =>
     getDefaultMiddleware().concat(moviesApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-
 export type AppDispatch = typeof store.dispatch;
 
 export const useAppDispatch: () => AppDispatch = useDispatch;

@@ -32,3 +32,10 @@ export type ButtonIconProps = {
   activeIcon?: JSX.Element,
 }
 
+export type ModalProps = {
+  id: string,
+  isVisible: boolean,
+  setSearchResultsVisible: () => void,
+  children: React.ReactNode,
+}
+

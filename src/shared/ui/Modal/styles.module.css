@@ -1,4 +1,4 @@
-.portal {
+.modal {
     position: absolute;
     top: calc(100% + 4px);
     max-width: 400px;

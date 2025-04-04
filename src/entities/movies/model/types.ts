@@ -1,5 +1,5 @@
-import React, { JSX } from "react";
-import { DirectionType, SkeletonType } from "@/shared/interface/types.ts";
+import React from "react";
+import { ButtonStyleType, ButtonType, DirectionType, SkeletonType } from "@/shared/interface/types.ts";
 
 export type Params = Partial<{
   type: string,
@@ -66,11 +66,12 @@ export type MovieCardProps = {
 export type MoviesListProps = {
   movies: MoviesCardType[],
   favorites?: MoviesCardType[],
-  isLoading?: boolean,
+  isLoading: boolean,
   cardType: cardType,
-  renderMovies: ( movie: MoviesCardType ) => JSX.Element,
   skeletonType?: SkeletonType,
   direction?: DirectionType,
+  buttonType: ButtonType,
+  buttonStyleType?: ButtonStyleType,
 }
 
 export type MoviesStateType = {

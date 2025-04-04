@@ -1,7 +1,6 @@
 import { SkeletonProps } from "@/shared/interface/types.ts";
 import styles from './styles.module.css';
 
-
 const Skeleton = ( { count, skeletonType = "item", direction = "row" }: SkeletonProps ) => {
   return (
     <>

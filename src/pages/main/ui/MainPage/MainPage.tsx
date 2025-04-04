@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styles from './styles.module.css';
-import { useAppDispatch } from "@/app/appStore.tsx";
+import { useAppDispatch } from "@/shared/store/store.ts";
 import { getFavoriteMovies } from "@/entities/movies/model/moviesSlice.ts";
 import TopMovies from "../TopMovies/TopMovies.tsx";
 
