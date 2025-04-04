@@ -23,15 +23,14 @@ const SearchPage = () => {
   const favorites = useAppSelector(( state: RootState ) => state.movies.favorites);
 
   const { data, isLoading } = useGetMoviesByKeywordsQuery(
-    { keyword: keyword },
-    { keepUnusedDataFor: 0 }
+    { keyword: keyword }
   );
   console.log(isLoading)
   return (
     <main className={styles.main}>
       <h3>Search results</h3>
       <MoviesList
-        movies={data}
+        movies={data || []}
         favorites={favorites}
         isLoading={isLoading}
         direction='column'

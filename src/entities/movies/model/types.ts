@@ -66,7 +66,7 @@ export type MovieCardProps = {
 export type MoviesListProps = {
   movies: MoviesCardType[],
   favorites?: MoviesCardType[],
-  isLoading: boolean,
+  isLoading?: boolean,
   cardType: cardType,
   skeletonType?: SkeletonType,
   direction?: DirectionType,
